@@ -1,10 +1,12 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { SpotifyPlugin } from './definitions';
+import type { SignInOptions, SignInResult, SpotifyPlugin } from './definitions';
 
 export class SpotifyWeb extends WebPlugin implements SpotifyPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async signIn(_: SignInOptions): Promise<SignInResult> {
+    console.log("unimplemented on web")
+    return {
+      resultUri: "unimplemented on web"
+    }
   }
 }

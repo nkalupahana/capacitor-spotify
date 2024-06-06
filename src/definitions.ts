@@ -1,3 +1,12 @@
 export interface SpotifyPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  signIn(options: SignInOptions): Promise<SignInResult>;
+}
+
+export interface SignInOptions {
+  clientId: string;
+  redirectUri: string;
+}
+
+export interface SignInResult {
+  resultUri: string;
 }
